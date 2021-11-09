@@ -1,4 +1,4 @@
-require './person.rb'
+require './person'
 # create class corrector
 class Corrector < Person
   def initialize(name = 'Unknown')
