@@ -1,9 +1,11 @@
+require './corrector'
 # Create class person
-class Person
+class Person < Corrector
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super(name)
     @id = Random.rand(1..10_000)
     @name = name
     @age = age
@@ -18,5 +20,9 @@ class Person
 
   def can_use_service?
     age_of? || @parent_permission
+  end
+
+  def validate_name
+    /[[:upper:]]/.match(@name)
   end
 end
