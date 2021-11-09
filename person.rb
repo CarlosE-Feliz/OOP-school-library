@@ -1,11 +1,10 @@
 require './corrector'
 # Create class person
-class Person < Corrector
+class Person
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
-    super(name)
     @id = Random.rand(1..10_000)
     @name = name
     @age = age
@@ -23,6 +22,7 @@ class Person < Corrector
   end
 
   def validate_name
-    /[[:upper:]]/.match(@name)
+    validate = Corrector.new
+    @name = validate.correct_name(@name)
   end
 end
