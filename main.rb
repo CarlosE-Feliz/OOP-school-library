@@ -1,15 +1,13 @@
 # test.rb
-require 'pry'
-require 'classroom'
-require 'person'
-require 'rental'
-require 'student'
-require 'teacher'
-require 'book'
+require './classroom'
+require './person'
+require './rental'
+require './student'
+require './teacher'
+require './book'
 # rubocop:disable all
 # Create class App
 class App
-  binding.pry
   def initialize
     @books = []
     @people = []
@@ -151,3 +149,4 @@ def main
     puts "\n"
   end
 end
+main()
