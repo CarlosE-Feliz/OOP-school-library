@@ -1,4 +1,3 @@
-# test.rb
 require './classroom'
 require './person'
 require './rental'
@@ -78,7 +77,7 @@ class App
     puts 'Book created'
   end
 
-  # *Create a rental.
+
   def create_rental
     puts 'Select a book from the following list by number'
     @books.each_with_index do |book, index|
@@ -98,7 +97,7 @@ class App
 
     date = gets.chomp
 
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
+    @rentals << Rental.new(date, @people[person_index],  @books[book_index])
     puts 'Rental created successfully'
   end
 
