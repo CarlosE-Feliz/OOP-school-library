@@ -1,3 +1,4 @@
+# rubocop:disable all
 # Create class App
 class App
   def initialize
